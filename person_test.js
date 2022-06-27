@@ -18,4 +18,8 @@ describe("tests run on the 'person.js' file:", () => {
   it("verifies that the displayed tigerified capitalized personOne's name is \"Tony, the tiger\"", () => {
     wish(personOne.name.capitalize().tigerify().display() === "Tony, the tiger");
   });
+  const personTwo = new AnonymousPerson("tony");
+  it("verifies that the displayed tigerified capitalized personTwo's name is \"\"", () => {
+    wish(personTwo.name.capitalize().tigerify().display() === "");
+  });
 });

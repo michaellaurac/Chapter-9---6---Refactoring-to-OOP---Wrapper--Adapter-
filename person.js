@@ -7,7 +7,7 @@ class Person {
 class AnonymousPerson extends Person {
   constructor () {
     super();
-    this.name = null;
+    this.name = new NullString();
   }
 }
 
@@ -23,6 +23,20 @@ class NameString extends String {
   display () {
     return this.toString();
   };
+}
+
+class NullString {
+  capitalize () {
+    return this;
+  }
+
+  tigerify () {
+    return this;
+  }
+
+  display () {
+    return "";
+  }
 }
 
 module.exports = { Person, AnonymousPerson };
