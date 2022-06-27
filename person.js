@@ -7,7 +7,7 @@ class Person {
 class AnonymousPerson extends Person {
   constructor () {
     super();
-    this.name = new NullString();
+    this.name = null;
   }
 }
 
@@ -39,4 +39,12 @@ class NullString {
   }
 }
 
-module.exports = { Person, AnonymousPerson };
+function WithoutNull (person) {
+  const personWithoutNull = Object.create(person);
+  if (personWithoutNull.name === null) {
+    personWithoutNull.name = new NullString();
+  }
+  return personWithoutNull;
+}
+
+module.exports = { Person, AnonymousPerson, WithoutNull };
